@@ -1,4 +1,7 @@
 {
+   "frametypes": {
+	   "TWR":      { "name": "Tower", "emoji": "🗼" }
+   },
    "classes": {
 	   "medical":  { "name": "Medical", "emoji": "🚑" },
 	   "military": { "name": "Military", "emoji": "🪖" } ,
