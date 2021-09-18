@@ -9,7 +9,8 @@
 	   "tv":       { "name": "TV", "emoji": "🎥" },
 	   "rescue":   { "name": "Rescue", "emoji": "⛑ " },
 	   "special":  { "name": "Speciality", "emoji": "🏆" },
-	   "light":    { "name": "Light", "emoji": "🛩 " }
+	   "light":    { "name": "Light", "emoji": "🛩 " },
+	   "fire":     { "name": "Fire", "emoji": "🔥 " }
 
    },
    "callsigns": {
@@ -83,6 +84,7 @@
 	   "QTR":  { "name": "Qatar Airways" },
 	   "UAL":  { "name": "United Airlines" },
 	   "UAE":  { "name": "Emirates" },
+	   "UTY":  { "name": "Alliance Airlines - Unity" },
 	   "VOZ":  { "name": "Virgin Australia" },
 
 	   "ASY":  { "name": "Royal Australian Air Force International - Aussie", "class": "raaf" },
@@ -109,7 +111,8 @@
 	   "VH-WYS": { "airline": "*NEWS", "class": "tv" },
 	   "VH-TCN": { "airline": "*NEWS", "class": "tv" },
 	   "VH-XEV": { "airline": "*WST" },
-	   "VH-VHO": { "airline": "*CRT" }
+	   "VH-VHO": { "airline": "*CRT" },
+	   "VH-UAX": { "airline": "*AVU", "class": "fire" }
    },
    "military": [
    	["adf7c8","afffff"], ["010070","01008f"], ["0a4000","0a4fff"], ["33ff00","33ffff"],
