@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 
 import pprint
 import json
@@ -15,7 +16,7 @@ from lib.craft import Craft, CraftStat, IncomingCraft
 
 total_messages = 0
 
-HOURS=10
+HOURS=12
 LANG=0
 
 CONFIG = {
