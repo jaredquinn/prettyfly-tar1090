@@ -1,0 +1,126 @@
+{
+   "classes": {
+	   "medical":  { "name": "Medical", "emoji": "🚑" },
+	   "military": { "name": "Military", "emoji": "🪖" } ,
+	   "raytheon": { "name": "Military Contractor", "emoji": "💣" },
+	   "raaf":     { "name": "RAAF", "emoji": "✈️ " } ,
+	   "police":   { "name": "Police", "emoji": "🚔" },
+	   "cargo":    { "name": "Cargo", "emoji": "🎁" },
+	   "tv":       { "name": "TV", "emoji": "🎥" },
+	   "rescue":   { "name": "Rescue", "emoji": "⛑ " },
+	   "special":  { "name": "Speciality", "emoji": "🏆" },
+	   "light":    { "name": "Light", "emoji": "🛩 " }
+
+   },
+   "callsigns": {
+	   "???": { "name": "Unclassified" },
+	   "***": { "name": "Private/Light", "class": "light" },
+
+	   "*NEWS": { "name": "Private/Various News Broadcasters" },
+	   "*SSTP": { "name": "Shortstop Jet Charter Pty Ltd" },
+	   "*WST":  { "name": "Private/Westpac Banking Corporation" },
+	   "*CRT":  { "name": "Curtis Aviation" },
+
+	   "*WP":   { "name": "Westpac Rescue", "class": "medical" },
+	   "*AM":   { "name": "AirMed Australia", "class": "medical" },
+
+	   "SSM":   { "name": "Sydney ADS-B Site Monitoring" },
+
+	   "AE":   { "name": "Aviation Logistics AirMed", "class": "medical" },
+	   "FD":   { "name": "RFDS Flydoc", "class": "medical" },
+	   "AM":   { "name": "RFDS Ambulance","class": "medical" },
+	   "CFH":  { "name": "Careflight", "class": "medical" },
+
+	   "WP":   { "name": "Westpac Rescue", "class": "rescue" },
+	   "RSCU": { "name": "Toll Rescue", "class": "rescue" },
+
+	   "POL":  { "name": "Police", "class": "police" },
+
+
+	   "CAL":  { "name": "Cargo Air Lines", "class": "cargo" },
+	   "CKS":  { "name": "Kalitta Air / DHL", "class": "cargo" },
+	   "SH":   { "name": "Sharp Airlines / Toll", "class": "cargo" },
+	   "TFR":  { "name": "Toll Freight", "class": "cargo" },
+	   "TMN":  { "name": "Tasman Cargo / DHL", "class": "cargo" },
+	   "FDX":  { "name": "FedEx", "class": "cargo" },
+	   "UPS":  { "name": "United Parcel Service", "class": "cargo" },
+
+	   "ADA":  { "name": "Airservices Australia, Flight Inspection", "class": "special" },
+
+	   "ACA":  { "name": "Air Canada" },
+	   "ACI":  { "name": "Air Caledonie International" },
+	   "ALK":  { "name": "SriLankan" },
+	   "ANA":  { "name": "All Nippon" },
+	   "ANZ":  { "name": "Air NewZealand" },
+	   "AWK":  { "name": "Airwork New Zealand" },
+	   "CCA":  { "name": "Air China" },
+	   "CES":  { "name": "China Eastern Airlines" },
+	   "CSN":  { "name": "China Southern Airlines" },
+	   "CRK":  { "name": "Hong Kong Airlines" },
+	   "CPA":  { "name": "Cathay Pacific" },
+	   "CXA":  { "name": "XiamenAir" },
+	   "DAL":  { "name": "Delta" },
+	   "ETD":  { "name": "Etihad" },
+	   "FJI":  { "name": "Fiji Airways" },
+	   "HVN":  { "name": "Vietnam Airlines" },
+	   "JAL":  { "name": "Japan Airlines" },
+	   "JST":  { "name": "Jetstar" },
+	   "JTE":  { "name": "National Jet Express" },
+	   "KAL":  { "name": "Korean Air" },
+	   "KAL":  { "name": "Korean Air" },
+	   "MAS":  { "name": "MalaysiaAirlines" },
+	   "PE":   { "name": "FlyPelican" },
+	   "PFY":  { "name": "Pel-Air Aviation" },
+	   "QFA":  { "name": "Qantas" },
+	   "QLK":  { "name": "QantasLink" },
+	   "RXA":  { "name": "Rex Regional" },
+	   "SND":  { "name": "SkyTraders" }, 
+	   "PAL":  { "name": "Philippine Airlines" },
+           "SIA":  { "name": "Singapore Airlines" },
+	   "TGW":  { "name": "Tiger Air" },
+	   "THA":  { "name": "Thai Airways" },
+	   "TAX":  { "name": "Thai AirAsia X" },
+	   "QTR":  { "name": "Qatar Airways" },
+	   "UAL":  { "name": "United Airlines" },
+	   "UAE":  { "name": "Emirates" },
+	   "VOZ":  { "name": "Virgin Australia" },
+
+	   "ASY":  { "name": "Royal Australian Air Force International - Aussie", "class": "raaf" },
+	   "EVY":  { "name": "34 Sqd, Fairburn RAAF - Envoy", "class": "raaf" },
+	   "BFRT": { "name": "32 Sqn, EastSale RAAF - Beaufort", "class": "raaf" },
+	   "WLBY": { "name": "35 Sqn, Richmond RAAF - Wallaby", "class": "raaf" },
+	   "STAL": { "name": "36 Sqn, Amberley RAAF - Stallion", "class": "raaf" },
+	   "TROJ": { "name": "37 Sqn, Richmond RAAF - Trojan", "class": "raaf" },
+
+	   "BSMN": { "name": "173 Sqn, Holsworthy - Bushman", "class": "military" },
+	   "TAIP": { "name": "723 Sqn, Nowra Helo Training - Taipan", "class": "military" },
+
+	   "AJAX": { "name": "ADF Contractor - Ajax", "class": "raytheon" },
+	   "SHDW": { "name": "Raytheon Navy Operations - Shadow", "class": "raytheon" },
+	   "FBED": { "name": "Raytheon ADF Fighter Role - Fishbed", "class": "raytheon" },
+	   "FNCR": { "name": "ADF Contractor Fighter Role - Fencer", "class": "raytheon" }
+   },
+   "registrations": {
+	   "VH-ESM": { "class": "raytheon" },
+	   "VH-MVW": { "class": "medical" },
+	   "VH-OAA": { "airline": "*SSTP" },
+	   "VH-IGK": { "airline": "*AM", "class": "medical" },
+	   "VH-SRF": { "airline": "*WP", "class": "medical" },
+	   "VH-WYS": { "airline": "*NEWS", "class": "tv" },
+	   "VH-TCN": { "airline": "*NEWS", "class": "tv" },
+	   "VH-XEV": { "airline": "*WST" },
+	   "VH-VHO": { "airline": "*CRT" }
+   },
+   "military": [
+   	["adf7c8","afffff"], ["010070","01008f"], ["0a4000","0a4fff"], ["33ff00","33ffff"],
+        ["350000","37ffff"], ["3a8000","3affff"], ["3b0000","3bffff"], ["3ea000","3ebfff"],
+        ["3f4000","3fbfff"], ["400000","40003f"], ["43c000","43cfff"], ["444000","446fff"],
+        ["44f000","44ffff"], ["457000","457fff"], ["45f400","45f4ff"], ["468000","4683ff"],
+        ["473c00","473c0f"], ["478100","4781ff"], ["480000","480fff"], ["48d800","48d87f"],
+        ["497c00","497cff"], ["498420","49842f"], ["4b7000","4b7fff"], ["4b8200","4b82ff"],
+        ["506f00","506fff"], ["70c070","70c07f"], ["710258","71028f"], ["710380","71039f"],
+        ["738a00","738aff"], ["7c822e","7c84ff"], ["7c8800","7c88ff"], ["7c9000","7cf6ff"],
+        ["7cf800","7cffff"], ["7d0000","7fffff"], ["800200","8002ff"], ["c20000","c3ffff"], 
+	["e40000","e41fff"] 
+   ]
+}
