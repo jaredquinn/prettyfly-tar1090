@@ -42,6 +42,7 @@ class Craft:
         self._data['country'] = country
 
     def set_airframe(self, airframe):
+        #print(airframe)
         if airframe is not None:
             self._data['rego'] = airframe[0]
             self._data['airframe'] = airframe[1]
@@ -50,9 +51,11 @@ class Craft:
 
     def set_frametype(self, frametype):
         if frametype is not None:
+            #print(frametype)
             self._data['wtc'] = frametype[2]
             self._data['frame_type'] = frametype[1]
             self._data['body_desc'] = frametype[0]
+
 
     def __init__(self, incoming, now):
         self._data = { 'id': None, 'callsigns': [], 'rego': None }
@@ -60,12 +63,10 @@ class Craft:
         if self._data['id'] is None:
             self._data['id'] = incoming.id
 
-        self.__set_if_smaller('firstSeen', now)
-        self.__set_if_larger('lastSeen', now)
+        self.update(incoming, now)
 
-        self.update(incoming)
 
-    def update(self, incoming):
+    def update(self, incoming, now=None):
 
         if incoming.callsign is not None:
             if incoming.callsign not in self._data['callsigns']:
@@ -78,6 +79,11 @@ class Craft:
         if incoming.distance is not None:
             self.__set_if_smaller('distClosest', incoming.distance)
             self.__set_if_larger('distFurther', incoming.distance)
+
+        if now is not None:
+            self.__set_if_smaller('firstSeen', now)
+            self.__set_if_larger('lastSeen', now)
+
 
 
 class IncomingCraft:
@@ -101,57 +107,53 @@ class IncomingCraft:
     def __str(self):
         return str(self._data)
 
-    def __init__(self, a, CONFIG):
 
-        self.CONFIG = CONFIG
+    def __init__(self, payload, cache):
+
+        self._cache = cache
 
         self._data = {
                 'id': None,
                 'altitude': None,
         }
 
-        self._data['id'] = a[0]
+        self._data['id'] = payload[0]
 
-        if a[1] not in ('None', 'ground'):
-            self._data['altitude'] = a[1]
-            self._data['messages'] = a[9]
+        if payload[1] not in ('None', 'ground'):
+            self._data['altitude'] = payload[1]
+            self._data['messages'] = payload[9]
 
-            if a[8] is not None:
-                self._data['callsign'] = a[8].replace(' ', '')
-
-
-            if a[4] is not None:
-                self._data['lon'] = Decimal(a[4])
-                self._data['lat'] = Decimal(a[5])
+            if payload[8] is not None:
+                self._data['callsign'] = payload[8].replace(' ', '')
 
 
-            if self._data.get('lon',None) is not None and self._data.get('lat',None) is not None:
-                self._data['distance'] = haversine(self._data['lon'], self._data['lat'], self.CONFIG.get('LAT'), self.CONFIG.get('LON'))
+            if payload[4] is not None:
+                self._data['lon'] = Decimal(payload[4])
+                self._data['lat'] = Decimal(payload[5])
+
+
+            if self._cache._args.lat is not None and self._cache._args.lon is not None:
+                self._data['distance'] = haversine(self._data['lon'], self._data['lat'], self._cache._args.lat, self._cache._args.lon)
 
 
 
 
 class CraftStat:
 
-#["7c5310",3300,null,9,-33.9039,151.195697,1,null,"QLK64D  ",370]
+    def __init__(self, args, cache):
+        print(args)
 
-    def __init__(self, WORDS, LANG):
+        self._args = args
+        self._cache = cache
+
         self.data = {}
-        self.WORDS = WORDS
-        self.LANG = LANG
 
         self.BODY_DESC = {}
         self.STATS = {}
         self.CRAFTS = {}
         self.count = 0
-        self.OPERATORS = {}
 
-        with open("data/operators.json", 'r') as rd:
-            self.OPERATORS = json.load(rd)
-            rd.close()
-#
-#        print(self.OPERATORS)
-#
+
     def getCountryCount(self):
         RESULTS = {}
 
@@ -181,10 +183,10 @@ class CraftStat:
 
             for c in v.callsigns:
                 prefix = ''.join([a for a in c[0:4] if a in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'])
-                csObj = self.OPERATORS.get('callsigns').get(prefix, None)
+                csObj = self._cache.OPERATORS.get('callsigns').get(prefix, None)
 
                 if csObj:
-                    operator = self.OPERATORS.get('callsigns').get(prefix)
+                    operator = self._cache.OPERATORS.get('callsigns').get(prefix)
                     if prefix not in RESULTS:
                         RESULTS[prefix] = []
                     RESULTS[prefix].append([c,v.rego])
@@ -192,7 +194,7 @@ class CraftStat:
                     if prefix in v.rego or v.rego.replace('-','') == c:
                         key = '***'
 
-                        reg = self.OPERATORS.get('registrations').get(v.rego)
+                        reg = self._cache.OPERATORS.get('registrations').get(v.rego)
                         if reg is not None:
                             al = reg.get('airline', None)
                             if al is not None:
@@ -232,7 +234,7 @@ class CraftStat:
 
         for i,v in self.CRAFTS.items():
 
-            rgObj = self.OPERATORS.get('registrations').get(v.rego, None)
+            rgObj = self._cache.OPERATORS.get('registrations').get(v.rego, None)
 #            print(v.rego, rgObj)
             if rgObj is not None:
                 for c in v.callsigns:
@@ -241,7 +243,7 @@ class CraftStat:
             else:
                 for c in v.callsigns:
                     prefix = ''.join([a for a in c if a in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'])
-                    csObj = self.OPERATORS.get('callsigns').get(prefix, None)
+                    csObj = self._cache.OPERATORS.get('callsigns').get(prefix, None)
 
                     if csObj is not None:
                         cls = csObj.get('class')
@@ -249,7 +251,7 @@ class CraftStat:
                             addResult(c, v.rego, cls)
 
             me = int(v.id, 16)
-            for m in self.OPERATORS.get('military'):
+            for m in self._cache.OPERATORS.get('military'):
                 start = int('0x%s' % m[0],16)
                 end = int('0x%s' % m[1],16)
                 if me > start and me < end:
@@ -277,28 +279,25 @@ class CraftStat:
 
         for s,v in sorted([(value,key) for (key,value) in FRAMES.items()], reverse=True): #[0:5]:
             body = self.BODY_DESC.get(v, None)
-
             if body:
                 if body['frame'][1] == 'TWR':
-                    CLASSES[self.WORDS.get('tower')[self.LANG]] = CLASSES.get('Tower',0) + s
+                    CLASSES['TWR'] = CLASSES.get('TWR',0) + s
                 else:
-
-
-                    t = body['body'][2]
+                    bodyT = body['body'][2]
 
                     if body['body'][1][0] == 'H':
-                        t = self.WORDS.get('heli')[self.LANG]
+                        bodyT = 'HELI'
 
                     if body['body'][1][0] == 'L':
                         if body['body'][1][2] == 'J':
-                            t = self.WORDS.get('jet')[self.LANG]
+                            bodyT = 'JET'
                         else:
-                            t = self.WORDS.get('prop')[self.LANG]
+                            bodyT = 'PROP'
                             if body['body'][1][1] == '2':
-                                t = self.WORDS.get('twin')[self.LANG]
+                                bodyT = 'TWINPROP'
 
                     if body['body'][1][0] == 'A':
-                        t = 'Amphibian ' + t
+                        bodyT = 'AMPHIB'
 
                     if s < lastv:
                         position = position + 1
@@ -309,14 +308,14 @@ class CraftStat:
                         pl = 's'
 
 
-                    CLASSES[t] = CLASSES.get(t,0) + s
+                    CLASSES[bodyT] = CLASSES.get(bodyT,0) + s
 
-                    RESULTS.append([position, body['body'][0], s, '{}{}'.format(t, pl)])
+                    RESULTS.append([position, body['body'][0], s, '{}{}'.format(bodyT, pl)])
 
         pl = ''
         if CLASSES.get('Tower',0) > 1:
             pl = 's'
-        RESULTS.append([position+1, "ADS-B Ground Station", CLASSES.get(self.WORDS.get('tower')[self.LANG],0), '{}{}'.format(self.WORDS.get('tower')[self.LANG], pl)])
+        RESULTS.append([position+1, "ADS-B Ground Station", CLASSES.get('TWR'), '{}{}'.format('TWR', pl)])
 
         lastv = 9999999
         position = 0

@@ -4,14 +4,18 @@ import json
 
 class RegoCache:
 
-    def __init__(self, CONFIG):
-        self.CONFIG = CONFIG
+    def __init__(self, progargs):
+        self._args = progargs
+
         self._data = {}
         self._types = {}
         self._loaded = []
         self._ranges = []
 
-        filePath = os.path.join(self.CONFIG.get('DB'), "icao_aircraft_types2.js")
+        self.OPERATORS = {}
+
+
+        filePath = os.path.join(self._args.tar_db, 'git-db', 'db', "icao_aircraft_types2.js")
         with gzip.open(filePath, 'rb') as rd:
             types = json.load(rd)
             for t in types.keys():
@@ -19,7 +23,7 @@ class RegoCache:
 
             rd.close()
 
-        with open("data/country.json", 'r') as rd:
+        with open(os.path.join(self._args.data_dir, "country.json"), 'r') as rd:
             ranges = json.load(rd)
 
             for r in ranges:
@@ -28,6 +32,13 @@ class RegoCache:
                 self._ranges.append(r)
 
             rd.close()
+
+
+        with open(os.path.join(self._args.data_dir, "operators.json"), 'r') as rd:
+            self.OPERATORS = json.load(rd)
+            rd.close()
+
+
 
     def get_country_emoji(self, country_name):
         for i in self._ranges:
@@ -60,7 +71,7 @@ class RegoCache:
 
         for c in [3,2,1]:
             prefix = regoHex[0:c]
-            filePath = os.path.join(self.CONFIG.get('DB'), "%s.js" % prefix)
+            filePath = os.path.join(self._args.tar_db, 'git-db', 'db', "%s.js" % prefix)
             if os.path.exists(filePath):
 
                 if not prefix in self._loaded:
