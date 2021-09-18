@@ -1,0 +1,19 @@
+{
+   "frametypes": {
+	   "TWR":      { "name": "Tower", "emoji": "🗼" }
+   },
+   "classes": {
+	   "medical":  { "name": "Medical", "emoji": "🚑" },
+	   "military": { "name": "Military", "emoji": "🪖" } ,
+	   "raytheon": { "name": "Military Contractor", "emoji": "💣" },
+	   "raaf":     { "name": "RAAF", "emoji": "✈️ " } ,
+	   "police":   { "name": "Police", "emoji": "🚔" },
+	   "cargo":    { "name": "Cargo", "emoji": "🎁" },
+	   "tv":       { "name": "TV", "emoji": "🎥" },
+	   "rescue":   { "name": "Rescue", "emoji": "⛑ " },
+	   "special":  { "name": "Speciality", "emoji": "🏆" },
+	   "light":    { "name": "Light", "emoji": "🛩 " },
+	   "fire":     { "name": "Fire", "emoji": "🔥 " }
+
+   }
+}

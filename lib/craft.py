@@ -183,10 +183,10 @@ class CraftStat:
 
             for c in v.callsigns:
                 prefix = ''.join([a for a in c[0:4] if a in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'])
-                csObj = self._cache.OPERATORS.get('callsigns').get(prefix, None)
+                csObj = self._cache.OPERATORS.get(prefix, None)
 
                 if csObj:
-                    operator = self._cache.OPERATORS.get('callsigns').get(prefix)
+                    operator = self._cache.OPERATORS.get(prefix)
                     if prefix not in RESULTS:
                         RESULTS[prefix] = []
                     RESULTS[prefix].append([c,v.rego])
@@ -194,7 +194,7 @@ class CraftStat:
                     if prefix in v.rego or v.rego.replace('-','') == c:
                         key = '***'
 
-                        reg = self._cache.OPERATORS.get('registrations').get(v.rego)
+                        reg = self._cache.IDENT.get('registrations').get(v.rego)
                         if reg is not None:
                             al = reg.get('airline', None)
                             if al is not None:
@@ -234,7 +234,7 @@ class CraftStat:
 
         for i,v in self.CRAFTS.items():
 
-            rgObj = self._cache.OPERATORS.get('registrations').get(v.rego, None)
+            rgObj = self._cache.IDENT.get('registrations').get(v.rego, None)
 #            print(v.rego, rgObj)
             if rgObj is not None:
                 for c in v.callsigns:
@@ -243,7 +243,7 @@ class CraftStat:
             else:
                 for c in v.callsigns:
                     prefix = ''.join([a for a in c if a in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'])
-                    csObj = self._cache.OPERATORS.get('callsigns').get(prefix, None)
+                    csObj = self._cache.OPERATORS.get(prefix, None)
 
                     if csObj is not None:
                         cls = csObj.get('class')
@@ -251,7 +251,7 @@ class CraftStat:
                             addResult(c, v.rego, cls)
 
             me = int(v.id, 16)
-            for m in self._cache.OPERATORS.get('military'):
+            for m in self._cache.IDENT.get('military'):
                 start = int('0x%s' % m[0],16)
                 end = int('0x%s' % m[1],16)
                 if me > start and me < end:

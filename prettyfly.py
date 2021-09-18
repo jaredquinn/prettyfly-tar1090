@@ -138,8 +138,8 @@ data = stats.getCarrierCount()
 for k in sorted(data, key=lambda k: len(data[k]), reverse=True):
 
     if len(data[k]) > 0:
-        op = cache.OPERATORS.get('callsigns').get(k)
-        ln = cache.OPERATORS.get('classes').get(op.get('class'), {})
+        op = cache.OPERATORS.get(k)
+        ln = cache.LANG.get('classes').get(op.get('class'), {})
         em = ln.get('emoji', '🛫')
         lab = k
         info = 'callsigns'

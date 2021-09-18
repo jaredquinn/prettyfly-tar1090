@@ -13,6 +13,8 @@ class RegoCache:
         self._ranges = []
 
         self.OPERATORS = {}
+        self.LANG = {}
+        self.IDENT = {}
 
 
         filePath = os.path.join(self._args.tar_db, 'git-db', 'db', "icao_aircraft_types2.js")
@@ -20,12 +22,10 @@ class RegoCache:
             types = json.load(rd)
             for t in types.keys():
                 self._types[t] = types[t]
-
             rd.close()
 
         with open(os.path.join(self._args.data_dir, "country.json"), 'r') as rd:
             ranges = json.load(rd)
-
             for r in ranges:
                 r['start'] = int(r['start'], 16)
                 r['end'] = int(r['end'], 16)
@@ -33,9 +33,30 @@ class RegoCache:
 
             rd.close()
 
+        with open(os.path.join(self._args.data_dir, "ident.json"), 'r') as rd:
+            self.IDENT = json.load(rd)
+
+        fp = os.path.join(self._args.data_dir, "ident_local.json")
+        if os.path.isfile(fp):
+            with open(fp, 'r') as rd:
+                moreOps= json.load(rd)
+                self.IDENT.update(moreOps)
+                rd.close()
+
 
         with open(os.path.join(self._args.data_dir, "operators.json"), 'r') as rd:
             self.OPERATORS = json.load(rd)
+            rd.close()
+
+        fp = os.path.join(self._args.data_dir, "operators_local.json")
+        if os.path.isfile(fp):
+            with open(fp, 'r') as rd:
+                moreOps= json.load(rd)
+                self.OPERATORS.update(moreOps)
+                rd.close()
+
+        with open(os.path.join(self._args.data_dir, "lang.json"), 'r') as rd:
+            self.LANG = json.load(rd)
             rd.close()
 
 
