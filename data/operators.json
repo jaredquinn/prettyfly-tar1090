@@ -45,9 +45,11 @@
    "CRK":  { "name": "Hong Kong Airlines" },
    "CPA":  { "name": "Cathay Pacific" },
    "CXA":  { "name": "XiamenAir" },
+   "CHH":  { "name": "Hainan Airlines" },
    "DAL":  { "name": "Delta" },
    "ETD":  { "name": "Etihad" },
    "FJI":  { "name": "Fiji Airways" },
+   "GIA":  { "name": "Garuda Indonesia" },
    "HVN":  { "name": "Vietnam Airlines" },
    "JAL":  { "name": "Japan Airlines" },
    "JST":  { "name": "Jetstar" },
@@ -59,6 +61,7 @@
    "PFY":  { "name": "Pel-Air Aviation" },
    "QFA":  { "name": "Qantas" },
    "QLK":  { "name": "QantasLink" },
+   "QJE":  { "name": "Cobham Aviation Services (QantasLink)" },
    "RXA":  { "name": "Rex Regional" },
    "SND":  { "name": "SkyTraders" }, 
    "PAL":  { "name": "Philippine Airlines" },
@@ -71,6 +74,8 @@
    "UAE":  { "name": "Emirates" },
    "UTY":  { "name": "Alliance Airlines - Unity" },
    "VOZ":  { "name": "Virgin Australia" },
+
+   "SVY":  { "name": "CorporateAir Aerial Survey", "class": "special" },
 
    "ASY":  { "name": "Royal Australian Air Force International - Aussie", "class": "raaf" },
    "EVY":  { "name": "34 Sqd, Fairburn RAAF - Envoy", "class": "raaf" },

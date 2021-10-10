@@ -191,7 +191,7 @@ class CraftStat:
                         RESULTS[prefix] = []
                     RESULTS[prefix].append([c,v.rego])
                 else:
-                    if prefix in v.rego or v.rego.replace('-','') == c:
+                    if v.rego and (prefix in v.rego or v.rego.replace('-','') == c):
                         key = '***'
 
                         reg = self._cache.IDENT.get('registrations').get(v.rego)

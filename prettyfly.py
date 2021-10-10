@@ -19,6 +19,7 @@ total_messages = 0
 import argparse
 
 parser = argparse.ArgumentParser(prog='prettyfly', usage='%(prog)s [options]')
+
 parser.add_argument('--hours', type=int, default=12)
 parser.add_argument('--data-dir', nargs='?', default='data')
 parser.add_argument('--tar-rundir', nargs='?', default='/run/tar1090')
