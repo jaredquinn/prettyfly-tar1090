@@ -59,7 +59,12 @@ class RegoCache:
             self.LANG = json.load(rd)
             rd.close()
 
+    def get_frame_type(self, type_name):
+        DEFAULT = { 'name': 'Unknown', 'emoji': ' ' }
+        return self.LANG.get('frametypes').get(type_name, DEFAULT)
 
+    def get_type_emoji(self, type_name):
+        return self.get_frame_type(type_name).get('emoji')
 
     def get_country_emoji(self, country_name):
         for i in self._ranges:

@@ -108,13 +108,19 @@ print('')
 getFrames = stats.getFrameCounts(cache)
 
 for i in getFrames.get('TYPE'):
-    print('%2d. %s (%d)' % (i[0], i[1], i[2]))
+    em = cache.get_frame_type(i[1])
+    print('%2d. %s %s (%d)' % (i[0], em.get('emoji'), em.get('name'), i[2]))
 
 print('')
 print('Top Airframes:')
 print('')
 for i in getFrames.get('AIRFRAME'):
-    print('%2d. %s (%d %s)' % (i[0], i[1], i[2], i[3]))
+    fr = i[3].replace('s', '')
+    plur = ''
+    if 's' in i[3]:
+        plur = 's'
+    em = cache.get_frame_type(fr)
+    print('%2d. %s (%d %s %s%s)' % (i[0], i[1], i[2], em.get('emoji'), em.get('name'), plur))
 
 print('')
 print('Busy Craft (Multiple Callsigns)')
