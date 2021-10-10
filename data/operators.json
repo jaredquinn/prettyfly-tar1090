@@ -10,7 +10,7 @@
    "*WP":   { "name": "Westpac Rescue", "class": "medical" },
    "*AM":   { "name": "AirMed Australia", "class": "medical" },
 
-   "SSM":   { "name": "Sydney ADS-B Site Monitoring" },
+   "SSM":   { "name": "Sydney ADS-B Site Monitoring", "class": "tower" },
 
    "AE":   { "name": "Aviation Logistics AirMed", "class": "medical" },
    "FD":   { "name": "RFDS Flydoc", "class": "medical" },
@@ -70,9 +70,11 @@
    "THA":  { "name": "Thai Airways" },
    "TAX":  { "name": "Thai AirAsia X" },
    "QTR":  { "name": "Qatar Airways" },
+   "VJT":  { "name": "VistaJet" },
    "UAL":  { "name": "United Airlines" },
    "UAE":  { "name": "Emirates" },
    "UTY":  { "name": "Alliance Airlines - Unity" },
+   "XAX":  { "name": "Air Asia X" },
    "VOZ":  { "name": "Virgin Australia" },
 
    "SVY":  { "name": "CorporateAir Aerial Survey", "class": "special" },

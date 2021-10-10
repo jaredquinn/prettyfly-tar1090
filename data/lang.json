@@ -1,12 +1,17 @@
 {
    "frametypes": {
-	   "TWR":      { "name": "Tower", "emoji": "🗼" }
+	   "TWR":      { "name": "Tower", "emoji": "🗼" },
+	   "HELI":     { "name": "Heli", "emoji": "🚁" },
+	   "TWINPROP": { "name": "Twinprop", "emoji": "🛩 " },
+	   "PROP":     { "name": "Prop", "emoji": "🛩" },
+	   "JET":      { "name": "Jet", "emoji": "🛫" }
    },
    "classes": {
 	   "medical":  { "name": "Medical", "emoji": "🚑" },
 	   "military": { "name": "Military", "emoji": "🪖" } ,
 	   "raytheon": { "name": "Military Contractor", "emoji": "💣" },
 	   "raaf":     { "name": "RAAF", "emoji": "✈️ " } ,
+	   "tower":    { "name": "Tower", "emoji": "🗼" } ,
 	   "police":   { "name": "Police", "emoji": "🚔" },
 	   "cargo":    { "name": "Cargo", "emoji": "🎁" },
 	   "tv":       { "name": "TV", "emoji": "🎥" },
