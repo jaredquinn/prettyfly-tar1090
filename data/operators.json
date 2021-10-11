@@ -35,6 +35,7 @@
 
    "ACA":  { "name": "Air Canada" },
    "ACI":  { "name": "Air Caledonie International" },
+   "ANG":  { "name": "Air Niugini" },
    "ALK":  { "name": "SriLankan" },
    "ANA":  { "name": "All Nippon" },
    "ANZ":  { "name": "Air NewZealand" },
@@ -89,8 +90,9 @@
    "BSMN": { "name": "173 Sqn, Holsworthy - Bushman", "class": "military" },
    "TAIP": { "name": "723 Sqn, Nowra Helo Training - Taipan", "class": "military" },
 
-   "AJAX": { "name": "ADF Contractor - Ajax", "class": "raytheon" },
-   "SHDW": { "name": "Raytheon Navy Operations - Shadow", "class": "raytheon" },
-   "FBED": { "name": "Raytheon ADF Fighter Role - Fishbed", "class": "raytheon" },
-   "FNCR": { "name": "ADF Contractor Fighter Role - Fencer", "class": "raytheon" }
+   "AJAX": { "name": "ADF Contractor - Ajax", "class": "defcon" },
+   "SHDW": { "name": "ADF Contractor - Navy Operations - Shadow", "class": "defcon" },
+   "FBED": { "name": "ADF Contractor Fighter Role - Fishbed", "class": "defcon" },
+   "FRSC": { "name": "ADF Contractor Fighter Role - Fresco", "class": "defcon" },
+   "FNCR": { "name": "ADF Contractor Fighter Role - Fencer", "class": "defcon" }
 }
