@@ -134,7 +134,8 @@ print('')
 data = stats.getInterestingCallsigns().items()
 for k,v in data:
     if k is not None:
-        print('%s %d: %s' % ( k, len(v), ', '.join([ '%s/%s' % (i[1],i[0]) for i in v ]) ) )
+        clem = cache.get_class_data(k)
+        print('%s%s %d: %s' % ( clem.get('emoji'), clem.get('name'), len(v), ', '.join([ '%s/%s' % (i[1],i[0]) for i in v ]) ) )
 
 print('')
 
