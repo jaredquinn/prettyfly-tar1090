@@ -56,7 +56,7 @@
    "JST":  { "name": "Jetstar" },
    "JTE":  { "name": "National Jet Express" },
    "KAL":  { "name": "Korean Air" },
-   "KAL":  { "name": "Korean Air" },
+   "LAN":  { "name": "LATAM Airlines" },
    "MAS":  { "name": "MalaysiaAirlines" },
    "PAL":  { "name": "Philippine Airlines" },
    "PE":   { "name": "FlyPelican" },
