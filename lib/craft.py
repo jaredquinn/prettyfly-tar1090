@@ -42,7 +42,6 @@ class Craft:
         self._data['country'] = country
 
     def set_airframe(self, airframe):
-        #print(airframe)
         if airframe is not None:
             self._data['rego'] = airframe[0]
             self._data['airframe'] = airframe[1]
