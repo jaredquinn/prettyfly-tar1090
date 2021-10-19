@@ -63,6 +63,10 @@ class RegoCache:
         DEFAULT = { 'name': 'Unknown', 'emoji': ' ' }
         return self.LANG.get('frametypes').get(type_name, DEFAULT)
 
+    def get_class_data(self, class_name):
+        DEFAULT = { 'name': 'unknown', 'emoji': ' ' }
+        return self.LANG.get('classes').get(class_name, DEFAULT)
+
     def get_type_emoji(self, type_name):
         return self.get_frame_type(type_name).get('emoji')
 
