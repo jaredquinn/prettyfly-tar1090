@@ -142,6 +142,12 @@ print('')
 print('Flights by Carrier')
 print('')
 
+def csfixer(cs,k):
+    cs = cs.replace(k,'')
+    if cs == '':
+        cs = k
+    return cs
+
 data = stats.getCarrierCount()
 for k in sorted(data, key=lambda k: len(data[k]), reverse=True):
 
@@ -155,6 +161,6 @@ for k in sorted(data, key=lambda k: len(data[k]), reverse=True):
             info = 'regos'
             lab = ''
 
-        print('%1s %3d %4s (%s) %s: %s' % ( em, len(data[k]), lab, op.get('name'),info,', '.join(sorted([i[0].replace(k,'') for i in data[k]])) ) )
+        print('%1s %3d %4s (%s) %s: %s' % ( em, len(data[k]), lab, op.get('name'),info,', '.join(sorted( [ csfixer(i[0], k) for i in data[k] ])) ) )
 
 
