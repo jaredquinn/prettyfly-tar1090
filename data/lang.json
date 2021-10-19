@@ -14,8 +14,11 @@
 	   "tower":    { "name": "Tower", "emoji": "🗼" } ,
 	   "police":   { "name": "Police", "emoji": "🚔" },
 	   "cargo":    { "name": "Cargo", "emoji": "🎁" },
+	   "tourist":  { "name": "Tourist", "emoji": "😎" },
 	   "tv":       { "name": "TV", "emoji": "🎥" },
+	   "park":     { "name": "Parks", "emoji": "🏞️" },
 	   "rescue":   { "name": "Rescue", "emoji": "⛑ " },
+	   "services": { "name": "TV/Services", "emoji": "📺" },
 	   "special":  { "name": "Speciality", "emoji": "🏆" },
 	   "light":    { "name": "Light", "emoji": "🛩 " },
 	   "fire":     { "name": "Fire", "emoji": "🔥 " }
