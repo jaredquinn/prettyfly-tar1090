@@ -6,10 +6,26 @@
 	   "VH-IGK": { "airline": "*AM", "class": "medical" },
 	   "VH-SRF": { "airline": "*WP", "class": "medical" },
 	   "VH-WYS": { "airline": "*NEWS", "class": "tv" },
-	   "VH-TCN": { "airline": "*NEWS", "class": "tv" },
 	   "VH-XEV": { "airline": "*WST" },
 	   "VH-VHO": { "airline": "*CRT" },
-	   "VH-UAX": { "airline": "*AVU", "class": "fire" }
+
+	   "VH-BTV": { "airline": "*AVU", "class": "tv" },
+	   "VH-CSA": { "airline": "*AVU" },
+	   "VH-HSV": { "airline": "*AVU", "class": "tv" },
+	   "VH-HTV": { "airline": "*AVU", "class": "tv" },
+	   "VH-HWA": { "airline": "*AVU", "class": "tv" },
+	   "VH-TCN": { "airline": "*AVU", "class": "tv" },
+	   "VH-TVG": { "airline": "*AVU", "class": "tv" },
+
+	   "VH-UAH": { "airline": "*AVU", "class": "park" },
+	   "VH-UAI": { "airline": "*AVU" },
+	   "VH-UAN": { "airline": "*AVU" },
+	   "VH-UAX": { "airline": "*AVU", "class": "fire" },
+	   "VH-UAY": { "airline": "*AVU" },
+	   "VH-UAZ": { "airline": "*AVU" },
+	   "VH-UVA": { "airline": "*AVU" },
+	   "VH-UVA": { "airline": "*AVU" },
+	   "VH-XWZ": { "airline": "*SHT" }
    },
    "military": [
    	["adf7c8","afffff"], ["010070","01008f"], ["0a4000","0a4fff"], ["33ff00","33ffff"],
