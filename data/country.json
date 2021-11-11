@@ -173,7 +173,7 @@
 	{ "start": "0x894000", "end": "0x894FFF", "country": "Bahrain", "flag_image": "Bahrain.png" },
 	{ "start": "0x895000", "end": "0x8953FF", "country": "Brunei", "flag_image": "Brunei.png" },
 	{ "start": "0x896000", "end": "0x896FFF", "country": "United Arab Emirates", "flag_image": "UAE.png", "emoji": "🇦🇪" },
-	{ "start": "0x897000", "end": "0x8973FF", "country": "Solomon Islands", "flag_image": "Soloman_Islands.png" },
+	{ "start": "0x897000", "end": "0x8973FF", "country": "Solomon Islands", "flag_image": "Soloman_Islands.png", "emoji": "🇸🇧" },
 	{ "start": "0x898000", "end": "0x898FFF", "country": "Papua New Guinea", "flag_image": "Papua_New_Guinea.png", "emoji": "🇵🇬" },
 	{ "start": "0x899000", "end": "0x8993FF", "country": "Taiwan", "flag_image": "Taiwan.png", "emoji": "🇹🇼" },
 	{ "start": "0x8A0000", "end": "0x8A7FFF", "country": "Indonesia", "flag_image": "Indonesia.png", "emoji": "🇮🇩" },

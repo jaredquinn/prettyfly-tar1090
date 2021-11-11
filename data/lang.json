@@ -8,7 +8,7 @@
    },
    "classes": {
 	   "medical":  { "name": "Medical", "emoji": "🚑" },
-	   "military": { "name": "Military", "emoji": "🪖" } ,
+	   "military": { "name": "Government/Military", "emoji": "🪖" } ,
 	   "defcon":   { "name": "Military Contractor", "emoji": "💣" },
 	   "raaf":     { "name": "RAAF", "emoji": "✈️ " } ,
 	   "tower":    { "name": "Tower", "emoji": "🗼" } ,

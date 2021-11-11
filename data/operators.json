@@ -35,6 +35,7 @@
 
    "ADA":  { "name": "Airservices Australia, Flight Inspection", "class": "special" },
 
+   "AAR":  { "name": "Asiana" },
    "ACA":  { "name": "Air Canada" },
    "ACI":  { "name": "Air Caledonie International" },
    "AHO":  { "name": "Air Hamburg" },
@@ -74,6 +75,8 @@
    "QTR":  { "name": "Qatar Airways" },
    "RXA":  { "name": "Rex Regional" },
    "SND":  { "name": "SkyTraders" }, 
+   "SLG":  { "name": "Saskatchewan Government Air Ambulance Service", "class": "medical" }, 
+   "SOL":  { "name": "Solomon Airlines" },
    "SIA":  { "name": "Singapore Airlines" },
    "TGW":  { "name": "Tiger Air" },
    "TFX":  { "name": "Toll Aviation" },
@@ -91,10 +94,13 @@
    "SVY":  { "name": "CorporateAir Aerial Survey", "class": "special" },
 
    "ASY":  { "name": "Royal Australian Air Force International - Aussie", "class": "raaf" },
-   "EVY":  { "name": "34 Sqd, Fairburn RAAF - Envoy", "class": "raaf" },
+   "MTCH": { "name": "2 Sqn, Williamtown RAAF - Mitchell", "class": "raaf" },
+   "WGTL": { "name": "2 Sqn, Williamtown RAAF - Wedgetail", "class": "raaf" },
+   "EVY":  { "name": "34 Sqn, Fairburn RAAF - Envoy", "class": "raaf" },
    "BFRT": { "name": "32 Sqn, East Sale RAAF - Beaufort", "class": "raaf" },
    "HDSN": { "name": "32 Sqn, East Sale RAAF - Hudson", "class": "raaf", "added": "2021-10-19" },
    "WLBY": { "name": "35 Sqn, Richmond RAAF - Wallaby", "class": "raaf" },
+   "DRGN": { "name": "33 Sqn, Amberley RAAF - Dragon", "class": "raaf" },
    "STAL": { "name": "36 Sqn, Amberley RAAF - Stallion", "class": "raaf" },
    
    "TROJ": { "name": "37 Sqn, Richmond RAAF - Trojan", "class": "raaf" },

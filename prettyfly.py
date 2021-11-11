@@ -120,7 +120,7 @@ for i in getFrames.get('AIRFRAME'):
     if 's' in i[3]:
         plur = 's'
     em = cache.get_frame_type(fr)
-    print('%2d. %s (%d %s %s%s)' % (i[0], i[1], i[2], em.get('emoji'), em.get('name'), plur))
+    print('%2d. %s (%d %s %s%s)' % (i[0], i[1], i[2] or 0, em.get('emoji'), em.get('name'), plur))
 
 print('')
 print('Busy Craft (Multiple Callsigns)')
