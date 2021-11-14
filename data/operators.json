@@ -74,6 +74,7 @@
    "QJE":  { "name": "Cobham Aviation Services (QantasLink)" },
    "QTR":  { "name": "Qatar Airways" },
    "RXA":  { "name": "Rex Regional" },
+   "RON":  { "name": "Nauru Air" },
    "SND":  { "name": "SkyTraders" }, 
    "SLG":  { "name": "Saskatchewan Government Air Ambulance Service", "class": "medical" }, 
    "SOL":  { "name": "Solomon Airlines" },
@@ -88,6 +89,7 @@
    "UKL":  { "name": "Ukraine Alliance", "class": "cargo" },
    "UTY":  { "name": "Alliance Airlines - Unity" },
    "VOZ":  { "name": "Virgin Australia" },
+   "VDA":  { "name": "Volga-Dnepr Airlines" },
    "WA":   { "name": "Wagga Air" },
    "XAX":  { "name": "Air Asia X" },
 
