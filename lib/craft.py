@@ -249,7 +249,7 @@ class CraftStat:
                         if cls is not None:
                             addResult(c, v.rego, cls)
 
-            me = int(v.id, 16)
+            me = int(v.id.replace('~', ''), 16)
             for m in self._cache.IDENT.get('military'):
                 start = int('0x%s' % m[0],16)
                 end = int('0x%s' % m[1],16)
